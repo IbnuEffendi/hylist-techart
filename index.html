@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HyList</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>HyList.</h1>
+        </header>
+        <div class="todo-section">
+            <form action="">
+                <div class="task-input-group">
+                    <input type="text" class="todo-task" placeholder="Task" required>
+                    <button class="todo-button" type="submit">
+                        <i class="bi bi-plus-circle-fill"></i>
+                    </button>
+                </div>
+                <div class="time-date-priority">
+                    <div class="input-icon">
+                        <i class="bi bi-clock"></i>
+                        <input type="time" class="todo-time" required>
+                    </div>
+                    <div class="input-icon">
+                        <i class="bi bi-calendar"></i>
+                        <input type="date" class="todo-date" required>
+                    </div>
+                    <div class="input-icon">
+                        <i class="bi bi-flag"></i>
+                        <select name="priority" class="todo-priority" required>
+                            <option value="urgent">Urgent</option>
+                            <option value="normal">Normal</option>
+                            <option value="not_urgent">Not Urgent</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="filter">
+            <form action="">
+                <div class="input-icon">
+                    <i class="bi bi-search"></i>
+                    <input type="text" class="search" placeholder="Search tasks...">
+                </div>
+                <div class="input-icon">
+                    <i class="bi bi-filter"></i>
+                    <select name="filter" class="filter-todo">
+                        <option value="all">All</option>
+                        <option value="not_started">Not Started</option>
+                        <option value="in_progress">In Progress</option>
+                        <option value="completed">Completed</option>
+                        <option value="urgent">Urgent</option>
+                        <option value="normal">Normal</option>
+                        <option value="not_urgent">Not Urgent</option>
+                    </select>
+                </div>
+                <div class="input-icon">
+                    <i class="bi bi-sort-alpha-down"></i>
+                    <select name="sort" id="sort" class="sort">
+                        <option value="time">Time</option>
+                        <option value="abjad">A-Z</option>
+                        <option value="priority">Priority</option>
+                        <option value="status">Status</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+        <div class="todo-container">
+            <ul class="todo-list"></ul>
+        </div>
+    </div>
+    <footer>
+        <strong>Created by M. Rizki Ibnu Effendi X TechArt</strong>
+      </footer>
+    <script src="script.js"></script>
+</body>
+</html>

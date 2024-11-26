@@ -1,0 +1,335 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #007bff, #ffffff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    width: 100%;
+}
+
+header {
+    background-color: #007bff;
+    width: 100%;
+    max-width: 700px; /* Perbesar lebar container */
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0; /* Sesuaikan margin bawah agar rata dengan container */
+}
+
+header h1 {
+    color: white;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px; /* Pastikan lebar sama dengan header */
+    box-sizing: border-box;
+    padding: 0 20px; /* Tambahkan padding agar sesuai dengan header */
+}
+
+.todo-section, .filter {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 100%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.todo-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.task-input-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.todo-task {
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 25px 0 0 25px;
+    flex-grow: 1;
+    margin-right: -1px; /* Hilangkan garis border antara input dan tombol */
+}
+
+.todo-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    width: 50px; /* Ukuran tombol submit */
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.todo-button:hover {
+    background-color: #0056b3;
+}
+
+.time-date-priority {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.input-icon {
+    display: flex;
+    align-items: center;
+    width: calc(33.33% - 10px);  /* Sesuaikan untuk desain responsif */
+    margin-right: 10px;
+}
+
+.input-icon i {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px;
+    border-radius: 25px 0 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-icon input,
+.input-icon select {
+    border: 1px solid #ccc;
+    background: white;
+    outline: none;
+    color: #000;
+    padding: 9px;
+    border-radius: 0 25px 25px 0;
+    width: 100%;
+}
+
+.input-icon select {
+    width: 100%;
+}
+
+.filter form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.search, .filter-todo, .sort {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 5px 10px;
+    width: calc(33.33% - 10px);  /* Sesuaikan untuk desain responsif */
+    margin-right: 10px;
+    background: white;
+}
+
+.search i, .filter-todo i, .sort i {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px;
+    border-radius: 25px 0 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: -1px; /* Hilangkan garis border antara ikon dan input */
+}
+
+.search input, .filter-todo select, .sort select {
+    border: 1px solid #ccc;
+    border-radius: 0 25px 25px 0;
+    background: white;
+    outline: none;
+    color: #000;
+    padding: 10px;
+    width: 100%;
+}
+
+.todo-container {
+    width: 100%;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.task-item.completed .task-left {
+    background-color: rgb(5, 189, 5);
+}
+
+.task-item.completed .task-title {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.task-item.overdue .task-left {
+    background-color: red;
+}
+
+.task-left {
+    background-color: #0056b3;
+    border-radius: 25px 0 0 25px;
+    color: white;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: absolute;
+    left: -30px;
+    top: 0;
+    bottom: 0;
+    width: 50px; /* Tambahkan lebar */
+}
+
+.task-content {
+    display: flex;
+    flex-direction: column; /* Atur menjadi kolom */
+    padding-left: 70px; /* Berikan ruang untuk task-left */
+    width: 100%;
+}
+
+.task-right {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px; /* Berikan ruang untuk margin */
+}
+
+.task-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.task-details {
+    display: flex;
+    justify-content: space-between;
+    background-color: #0056b3;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+.task-details span {
+    display: flex;
+    align-items: center;
+}
+
+.task-details i {
+    margin-right: 5px;
+}
+
+.task-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.edit-task, .delete-task {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.edit-task i, .delete-task i {
+    color: #007bff;
+    font-size: 1.2rem;
+}
+
+.edit-task:hover i, .delete-task:hover i {
+    color: #0056b3;
+}
+
+.task-status {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Tambahkan aturan CSS untuk task yang sedang in progress */
+/* Tambahkan aturan CSS untuk bagian kiri task yang sedang in progress */
+.task-item.in_progress .task-left {
+    background-color: #00ffd9; /* Biru muda */
+}
+
+/* Animasi untuk penambahan task */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animasi untuk penghapusan task */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+/* Animasi untuk perubahan status */
+@keyframes highlight {
+    from {
+        background-color: #ffff99; /* Warna kuning untuk highlight */
+    }
+    to {
+        background-color: transparent;
+    }
+}
+
+.task-item {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.task-item.fade-out {
+    animation: fadeOut 0.5s ease-in-out forwards;
+}
+
+.task-left {
+    transition: background-color 0.3s ease;
+}
+
+.task-left.highlight {
+    animation: highlight 1s ease-in-out;
+}
